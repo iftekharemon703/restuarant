@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Button, FlatList, Text, View } from 'react-native';
 import { connect } from 'react-redux';
+import MenuItem from '../Components/MenuItem';
 import { getDishes } from '../redux/ActionCreators';
 
 const mapStateToProps = state => {
@@ -26,7 +27,7 @@ const MenuScreen = props => {
                   <FlatList 
                         data={props.dishes}
                         renderItem={
-                              ({item}) => <Text>{item.name}</Text>
+                              ({item}) => (<MenuItem item={item} />)
                         }
                         keyExtractor={item => item.id.toString()}
                   />
