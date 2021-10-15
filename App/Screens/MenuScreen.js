@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Button, Text, View } from 'react-native';
+import { Button, FlatList, Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import { getDishes } from '../redux/ActionCreators';
 
@@ -23,8 +23,13 @@ const MenuScreen = props => {
       
       return (
             <View>
-                  <Text>Menu Screen</Text>
-                  <Button title="Go To DishDetail" onPress={() => props.navigation.navigate("Dish Detail")} />
+                  <FlatList 
+                        data={props.dishes}
+                        renderItem={
+                              ({item}) => <Text>{item.name}</Text>
+                        }
+                        keyExtractor={item => item.id.toString()}
+                  />
             </View>
       );
 };
