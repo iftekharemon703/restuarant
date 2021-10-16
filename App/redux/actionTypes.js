@@ -1,1 +1,4 @@
 export const LOAD_DISHES = 'LOAD_DISHES'; 
+
+export const ADD_FAVORITES = 'ADD_FAVORITES';
+export const REMOVE_FAVORITES = "REMOVE_FAVORITES";
